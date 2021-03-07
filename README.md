@@ -9,6 +9,7 @@
   * [Prediction Data Description](#Prediction-Data-Description)
   * [Prediction Data Validation](#Prediction-Data-Validation)
   * [Prediction](#Prediction)
+  * [EDA](#EDA)
   * [Installation](#Installation)
   * [How to Run](#How-To-Run)
   * [Technologies & Tools Used](#Technologies-&-Tools-Used)
@@ -61,7 +62,7 @@ In this step, we perform different sets of validation on the given set of traini
 1. Clustering - KMeans algorithm is used to create clusters in the preprocessed data. The optimum number of clusters is selected by plotting the elbow plot, and for the dynamic selection of the number of clusters, we are using "KneeLocator" function. The idea behind clustering is to implement different algorithms
    To train data in different clusters. The Kmeans model is trained over preprocessed data and the model is saved for further use in prediction.
 
-1. Model Selection - After clusters are created, we find the best model for each cluster. We are using two algorithms, `"Random forest Regressor"` and `“Linear Regression”`. For each cluster, both the algorithms are passed with the best parameters derived from GridSearch. We calculate the Rsquared scores for both models and select the model with the best score. Similarly, the model is selected for each cluster. All the models for every cluster are saved for use in prediction. 
+1. Model Selection - After clusters are created, we find the best model for each cluster. We are using algorithm, `"Random forest Regressor"` . For each cluster, both the algorithms are passed with the best parameters derived from GridSearch. We calculate the Rsquared scores for both models and select the model with the best score. Similarly, the model is selected for each cluster. All the models for every cluster are saved for use in prediction. 
 
 ## Prediction Data Description 
 Client will send the data in multiple set of files in batches at a given location.Data will contain 23 columns and we have to predict whether an order will become back order or not. 
@@ -92,6 +93,9 @@ In this step, we perform different sets of validation on the given set of traini
    To train data in different clusters. The Kmeans model is trained over preprocessed data and the model is saved for further use in prediction.
 1. Prediction - Based on the cluster number, the respective model is loaded and is used to predict the data for that cluster.
 1. Once the prediction is made for all the clusters, the predictions along with the original names before label encoder are saved in a CSV file at a given location and the location is returned to the client.
+
+## EDA
+EDA available in EDA Folder.
 
 ## Installation
 The Code is written in Python 3.7.5. If you don't have Python installed you can find it [here](https://www.python.org/downloads/). If you are using a lower version of Python you can upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries, run this command in the project directory after [cloning](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/) the repository:
